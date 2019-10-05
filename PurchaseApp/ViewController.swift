@@ -8,17 +8,13 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController {
-
-    @IBOutlet weak var statusImageView: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-
-    @IBOutlet weak var purchaseButton: UIButton!
-    @IBOutlet weak var restoreButton: UIButton!
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+
+
 }
 
