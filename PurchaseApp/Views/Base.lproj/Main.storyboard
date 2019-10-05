@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,19 +26,21 @@
                                             <constraint firstAttribute="width" constant="200" id="hNB-Ib-uVW"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-rb-5Wz">
-                                        <rect key="frame" x="163" y="505.5" width="88" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-rb-5Wz">
+                                        <rect key="frame" x="25" y="505.5" width="364" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="yXV-D9-l3e" firstAttribute="centerX" secondItem="gF4-nI-6RI" secondAttribute="centerX" id="BQ7-XX-cmv"/>
                                     <constraint firstItem="eXS-rb-5Wz" firstAttribute="top" secondItem="yXV-D9-l3e" secondAttribute="bottom" constant="25" id="Dkq-jY-lsq"/>
                                     <constraint firstItem="eXS-rb-5Wz" firstAttribute="centerX" secondItem="gF4-nI-6RI" secondAttribute="centerX" id="HM4-IK-PUQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="eXS-rb-5Wz" secondAttribute="trailing" constant="25" id="M9y-Nb-s9G"/>
                                     <constraint firstItem="yXV-D9-l3e" firstAttribute="centerY" secondItem="gF4-nI-6RI" secondAttribute="centerY" id="Mt0-tJ-SYa"/>
+                                    <constraint firstItem="eXS-rb-5Wz" firstAttribute="leading" secondItem="gF4-nI-6RI" secondAttribute="leading" constant="25" id="jJ9-SL-RUd"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hn-si-ZyY">
@@ -45,21 +48,29 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ags-Dw-eXF">
                                         <rect key="frame" x="25" y="10" width="364" height="55"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="2fb-4Y-JW4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="Purchase">
+                                        <state key="normal" title="Buy for $29.99">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="purchaseTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sAK-gi-ita"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0B-fQ-4Wl">
                                         <rect key="frame" x="68" y="70" width="278" height="30"/>
-                                        <state key="normal" title="Already purchase? Restore the purchase"/>
+                                        <state key="normal" title="Already purchase? Restore the purchase">
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="restoreTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LmP-ek-Bsb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ags-Dw-eXF" secondAttribute="trailing" constant="25" id="02b-et-Y6Z"/>
                                     <constraint firstItem="S0B-fQ-4Wl" firstAttribute="top" secondItem="ags-Dw-eXF" secondAttribute="bottom" constant="5" id="17N-el-fXi"/>
@@ -96,5 +107,8 @@
     </scenes>
     <resources>
         <image name="premium" width="512" height="512"/>
+        <namedColor name="Color">
+            <color red="0.10588235294117647" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -9,13 +9,14 @@
 import RxCocoa
 
 enum PurchaseState {
+    case none
     case error(PurchaseError)
     case success
 }
 
 protocol HomeViewModeling {
     
-    var purchaseState: Signal<PurchaseState> { get }
+    var purchaseState: Driver<PurchaseState> { get }
     
     func purchase()
     func restore()
