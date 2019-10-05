@@ -1,3 +1,43 @@
-PODFILE CHECKSUM: 307c86d6577629b30aeb498544bf273f18a348b7
+PODS:
+  - Nimble (8.0.4)
+  - Quick (2.1.0)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - Swinject (2.6.2)
+  - SwinjectAutoregistration (2.6.1):
+    - Swinject (~> 2.6)
+
+DEPENDENCIES:
+  - Nimble (~> 8.0.0)
+  - Quick (~> 2.1.0)
+  - RxCocoa (~> 5.0)
+  - RxSwift (~> 5.0)
+  - Swinject (~> 2.6.0)
+  - SwinjectAutoregistration (~> 2.6.0)
+
+SPEC REPOS:
+  trunk:
+    - Nimble
+    - Quick
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - Swinject
+    - SwinjectAutoregistration
+
+SPEC CHECKSUMS:
+  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+  SwinjectAutoregistration: d0de7e48db3601b8b130f2f84e5a8399e0224135
+
+PODFILE CHECKSUM: 2838352c927a09af91202eabaf8d6060e90b1853
 
 COCOAPODS: 1.8.1
