@@ -14,6 +14,8 @@ enum PurchaseState {
     case success
 }
 
+extension PurchaseState: Equatable {  }
+
 protocol HomeViewModeling {
     
     var purchaseState: Driver<PurchaseState> { get }
