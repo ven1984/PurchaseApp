@@ -14,8 +14,10 @@ import RxSwift
 final class HomeViewController: UIViewController {
 
     struct Text {
-        let normal = "Get the premium, experience all the functions!"
-        let success = "Thanks for your purchase!"
+        let advanced = "Thanks for your purchase! You're advanced user now."
+        let intermediate = "Thanks for your purchase! You're intermediate user now."
+        let normal = "Get the advanced or intermediate, experience all the functions!"
+        let notSupport = "Does not support in app purchase"
         let error = "Something wrong, please try again latter"
         let restore = "Already purchase? Restore the purchase"
     }
@@ -23,7 +25,8 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var statusImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
 
-    @IBOutlet weak var purchaseButton: UIButton!
+    @IBOutlet weak var advancedButton: UIButton!
+    @IBOutlet weak var intermediateButton: UIButton!
     @IBOutlet weak var restoreButton: UIButton!
 
     private let disposeBag = DisposeBag()
@@ -52,11 +55,14 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bindViewModel()
+        viewModel.fetchPurchaseItems()
     }
 
     private func setupUI() {
-        purchaseButton.layer.cornerRadius = 15
-        purchaseButton.clipsToBounds = true
+        advancedButton.layer.cornerRadius = 15
+        advancedButton.clipsToBounds = true
+        intermediateButton.layer.cornerRadius = 15
+        intermediateButton.clipsToBounds = true
     
         let range = NSMakeRange(0, textProvider.restore.count)
         let text = NSMutableAttributedString(string: textProvider.restore)
@@ -68,24 +74,49 @@ final class HomeViewController: UIViewController {
         viewModel.purchaseState.drive(onNext: { [weak self] (state) in
             guard let self = self else { return }
             switch state {
-            case .none:
-                self.statusImageView.image = UIImage(named: "premium")
-                self.descriptionLabel.text = self.textProvider.normal
-            case .error(_):
-                // TODO: After purchase state finish, handle the error
-                self.statusImageView.image = UIImage(named: "error")
-                self.descriptionLabel.text = self.textProvider.error
-            case .success:
-                self.statusImageView.image = UIImage(named: "success")
-                self.descriptionLabel.text = self.textProvider.success
-                self.purchaseButton.isHidden = true
-                self.restoreButton.isHidden = true
+                case .advanced:
+                    self.statusImageView.image = UIImage(named: "success")
+                    self.descriptionLabel.text = self.textProvider.advanced
+                    self.advancedButton.isHidden = true
+                    self.intermediateButton.isHidden = true
+                    self.restoreButton.isHidden = true
+                    break
+                case .intermediate:
+                    self.statusImageView.image = UIImage(named: "success")
+                    self.descriptionLabel.text = self.textProvider.intermediate
+                    self.advancedButton.isHidden = false
+                    self.intermediateButton.isHidden = true
+                    self.restoreButton.isHidden = true
+                    break
+                case .none:
+                    self.statusImageView.image = UIImage(named: "premium")
+                    self.descriptionLabel.text = self.textProvider.normal
+                    self.advancedButton.isHidden = false
+                    self.intermediateButton.isHidden = false
+                    self.restoreButton.isHidden = false
+                    break
+                case .error(_):
+                    // TODO: After purchase state finish, handle the error
+                    self.statusImageView.image = UIImage(named: "error")
+                    self.descriptionLabel.text = self.textProvider.error
+                    break
+                case .notSupport:
+                    self.statusImageView.image = UIImage(named: "error")
+                    self.descriptionLabel.text = self.textProvider.notSupport
+                    self.advancedButton.isHidden = true
+                    self.intermediateButton.isHidden = true
+                    self.restoreButton.isHidden = true
+                    break
             }
             }).disposed(by: disposeBag)
     }
 
-    @IBAction func purchaseTouchUp(_ sender: Any) {
-        viewModel.purchase()
+    @IBAction func advancedTouchUp(_ sender: Any) {
+        viewModel.purchaseAdvanced()
+    }
+
+    @IBAction func intermediateButtonTouchUp(_ sender: Any) {
+        viewModel.purchaseIntermediate()
     }
 
     @IBAction func restoreTouchUp(_ sender: Any) {

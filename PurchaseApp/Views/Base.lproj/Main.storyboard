@@ -17,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gF4-nI-6RI">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="761"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="701"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="premium" translatesAutoresizingMaskIntoConstraints="NO" id="yXV-D9-l3e">
-                                        <rect key="frame" x="107" y="280.5" width="200" height="200"/>
+                                        <rect key="frame" x="107" y="250.5" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="9ci-WG-adc"/>
                                             <constraint firstAttribute="width" constant="200" id="hNB-Ib-uVW"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-rb-5Wz">
-                                        <rect key="frame" x="25" y="505.5" width="364" height="24"/>
+                                        <rect key="frame" x="25" y="475.5" width="364" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hn-si-ZyY">
-                                <rect key="frame" x="0.0" y="761" width="414" height="135"/>
+                                <rect key="frame" x="0.0" y="701" width="414" height="195"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ags-Dw-eXF">
                                         <rect key="frame" x="25" y="10" width="364" height="55"/>
@@ -53,15 +53,15 @@
                                             <constraint firstAttribute="height" constant="55" id="2fb-4Y-JW4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="Buy for $29.99">
+                                        <state key="normal" title="Buy for $9.99/month">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="purchaseTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sAK-gi-ita"/>
+                                            <action selector="advancedTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gUB-wF-qVq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0B-fQ-4Wl">
-                                        <rect key="frame" x="68" y="70" width="278" height="30"/>
+                                        <rect key="frame" x="68" y="130" width="278" height="30"/>
                                         <state key="normal" title="Already purchase? Restore the purchase">
                                             <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -69,14 +69,32 @@
                                             <action selector="restoreTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LmP-ek-Bsb"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MG-gx-fvY">
+                                        <rect key="frame" x="25" y="70" width="364" height="55"/>
+                                        <color key="backgroundColor" name="Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="dVV-p0-usz"/>
+                                            <constraint firstAttribute="height" constant="55" id="nVa-Hd-nwC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="Buy for $4.99/month">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="intermediateButtonTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpD-6N-6fa"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ags-Dw-eXF" secondAttribute="trailing" constant="25" id="02b-et-Y6Z"/>
-                                    <constraint firstItem="S0B-fQ-4Wl" firstAttribute="top" secondItem="ags-Dw-eXF" secondAttribute="bottom" constant="5" id="17N-el-fXi"/>
+                                    <constraint firstItem="S0B-fQ-4Wl" firstAttribute="top" secondItem="1MG-gx-fvY" secondAttribute="bottom" constant="5" id="17N-el-fXi"/>
+                                    <constraint firstItem="1MG-gx-fvY" firstAttribute="leading" secondItem="9hn-si-ZyY" secondAttribute="leading" constant="25" id="Bdw-i7-9k4"/>
+                                    <constraint firstAttribute="trailing" secondItem="1MG-gx-fvY" secondAttribute="trailing" constant="25" id="Muo-wN-6SO"/>
                                     <constraint firstItem="ags-Dw-eXF" firstAttribute="top" secondItem="9hn-si-ZyY" secondAttribute="top" constant="10" id="XG5-ie-m43"/>
                                     <constraint firstItem="ags-Dw-eXF" firstAttribute="leading" secondItem="9hn-si-ZyY" secondAttribute="leading" constant="25" id="dnF-HO-U1Z"/>
-                                    <constraint firstAttribute="height" constant="135" id="sgp-A8-pgB"/>
+                                    <constraint firstItem="1MG-gx-fvY" firstAttribute="top" secondItem="ags-Dw-eXF" secondAttribute="bottom" constant="5" id="eN7-v2-sXQ"/>
+                                    <constraint firstAttribute="height" constant="195" id="sgp-A8-pgB"/>
                                     <constraint firstItem="S0B-fQ-4Wl" firstAttribute="centerX" secondItem="9hn-si-ZyY" secondAttribute="centerX" id="wsB-Wa-yca"/>
                                 </constraints>
                             </view>
@@ -94,8 +112,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="advancedButton" destination="ags-Dw-eXF" id="GnO-ux-H2Q"/>
                         <outlet property="descriptionLabel" destination="eXS-rb-5Wz" id="aWS-zy-W0Q"/>
-                        <outlet property="purchaseButton" destination="ags-Dw-eXF" id="rcp-tW-4BG"/>
+                        <outlet property="intermediateButton" destination="1MG-gx-fvY" id="97S-IV-FKW"/>
                         <outlet property="restoreButton" destination="S0B-fQ-4Wl" id="Dkm-nQ-M39"/>
                         <outlet property="statusImageView" destination="yXV-D9-l3e" id="sG7-6X-89W"/>
                     </connections>

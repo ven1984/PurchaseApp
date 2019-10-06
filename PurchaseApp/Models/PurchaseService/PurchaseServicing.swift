@@ -6,7 +6,15 @@
 //  Copyright © 2019 Acclegor. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
+import StoreKit
+
+enum PurchaseProductType {
+    case none
+    case advanced
+    case intermediate
+}
 
 enum PurchaseError: Error {
     case fail
@@ -15,11 +23,11 @@ enum PurchaseError: Error {
 }
 
 protocol PurchaseServicing {
-
-    func purchase(fail: (PurchaseError) -> Void, complete: () -> Void)
-    func restorePurchase(fail: (PurchaseError) -> Void, complete: () -> Void)
-}
-
-protocol HasPurchaseService {
-    var purchaseService: PurchaseServicing { get }
+    var productsRelay: BehaviorRelay<[SKProduct]> { get }
+    var purchaseRelay: BehaviorRelay<PurchaseProductType> { get }
+    var errorSubject: PublishSubject<PurchaseError> { get }
+    
+    func requestProductInfos()
+    func purchase(type: PurchaseProductType)
+    func restorePurchase()
 }

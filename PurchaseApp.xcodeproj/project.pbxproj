@@ -21,6 +21,7 @@
 		8B2A024F23474F8A00DAB7EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2A024D23474F8A00DAB7EF /* Main.storyboard */; };
 		8B2A025123474F8A00DAB7EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2A025023474F8A00DAB7EF /* Assets.xcassets */; };
 		8B2A025423474F8A00DAB7EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2A025223474F8A00DAB7EF /* LaunchScreen.storyboard */; };
+		A1BF4C54234A117E006C3621 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BF4C53234A117E006C3621 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		8B2A025A23474F8B00DAB7EF /* PurchaseAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurchaseAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2A026023474F8B00DAB7EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91367C286DC84F6AE75C98CD /* Pods-PurchaseAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PurchaseAppTests/Pods-PurchaseAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A1BF4C53234A117E006C3621 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		CA81F55EDCADB1E57AEEB2E3 /* Pods-PurchaseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseApp.debug.xcconfig"; path = "Target Support Files/Pods-PurchaseApp/Pods-PurchaseApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BEB42C87F60165DB016855A /* Pods_PurchaseApp.framework in Frameworks */,
+				A1BF4C54234A117E006C3621 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 		30A7204849CB7B46988A680A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1BF4C53234A117E006C3621 /* StoreKit.framework */,
 				204B764AF2942E806C294B2B /* Pods_PurchaseApp.framework */,
 				3DE022F1A246700457F2C99A /* Pods_PurchaseAppTests.framework */,
 			);

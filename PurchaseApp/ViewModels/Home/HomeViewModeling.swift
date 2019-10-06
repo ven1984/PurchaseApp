@@ -9,9 +9,11 @@
 import RxCocoa
 
 enum PurchaseState {
+    case advanced
+    case intermediate
     case none
+    case notSupport
     case error(PurchaseError)
-    case success
 }
 
 extension PurchaseState: Equatable {  }
@@ -20,6 +22,8 @@ protocol HomeViewModeling {
     
     var purchaseState: Driver<PurchaseState> { get }
     
-    func purchase()
+    func fetchPurchaseItems()
+    func purchaseAdvanced()
+    func purchaseIntermediate()
     func restore()
 }
