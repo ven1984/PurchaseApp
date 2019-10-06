@@ -10,28 +10,28 @@ import RxCocoa
 import RxSwift
 
 final class HomeViewModel: HomeViewModeling {
-    typealias Context = HasPurchaseService
-    
+    struct Context {
+        let purchaseService: PurchaseServicing
+    }
+
     let context: Context
-    
-    let purchaseStateRelay = PublishRelay<PurchaseState>()
-    var purchaseState: Signal<PurchaseState> { return purchaseStateRelay.asSignal() }
-    
+
+    let purchaseStateRelay = BehaviorRelay<PurchaseState>(value: .none)
+    var purchaseState: Driver<PurchaseState> { return purchaseStateRelay.asDriver() }
+
     init(context: Context) {
         self.context = context
     }
-    
+
     func purchase() {
         context.purchaseService.purchase(
             fail: { purchaseStateRelay.accept(.error($0)) },
             complete: { purchaseStateRelay.accept(.success) })
     }
-    
+
     func restore() {
         context.purchaseService.restorePurchase(
             fail: { purchaseStateRelay.accept(.error($0)) },
             complete: { purchaseStateRelay.accept(.success) })
     }
-    
-    
 }

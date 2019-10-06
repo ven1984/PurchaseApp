@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0BEB42C87F60165DB016855A /* Pods_PurchaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204B764AF2942E806C294B2B /* Pods_PurchaseApp.framework */; };
+		3FAF45022349FBAA0046C1AF /* HomeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF45012349FBAA0046C1AF /* HomeViewModelSpec.swift */; };
 		3FB334562348ADC600B72131 /* PurchaseServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB334552348ADC600B72131 /* PurchaseServicing.swift */; };
 		3FB334582348AEFD00B72131 /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB334572348AEFD00B72131 /* PurchaseService.swift */; };
 		3FB3345B2348AF4F00B72131 /* PurchaseServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3345A2348AF4F00B72131 /* PurchaseServiceMock.swift */; };
@@ -20,7 +21,6 @@
 		8B2A024F23474F8A00DAB7EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2A024D23474F8A00DAB7EF /* Main.storyboard */; };
 		8B2A025123474F8A00DAB7EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2A025023474F8A00DAB7EF /* Assets.xcassets */; };
 		8B2A025423474F8A00DAB7EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2A025223474F8A00DAB7EF /* LaunchScreen.storyboard */; };
-		8B2A025F23474F8B00DAB7EF /* PurchaseAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A025E23474F8B00DAB7EF /* PurchaseAppTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,7 @@
 		04C089D630BBD234C36C1214 /* Pods-PurchaseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseApp.release.xcconfig"; path = "Target Support Files/Pods-PurchaseApp/Pods-PurchaseApp.release.xcconfig"; sourceTree = "<group>"; };
 		204B764AF2942E806C294B2B /* Pods_PurchaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PurchaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE022F1A246700457F2C99A /* Pods_PurchaseAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PurchaseAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FAF45012349FBAA0046C1AF /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
 		3FB334552348ADC600B72131 /* PurchaseServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseServicing.swift; sourceTree = "<group>"; };
 		3FB334572348AEFD00B72131 /* PurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseService.swift; sourceTree = "<group>"; };
 		3FB3345A2348AF4F00B72131 /* PurchaseServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseServiceMock.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		8B2A025323474F8A00DAB7EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B2A025523474F8A00DAB7EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B2A025A23474F8B00DAB7EF /* PurchaseAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurchaseAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B2A025E23474F8B00DAB7EF /* PurchaseAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseAppTests.swift; sourceTree = "<group>"; };
 		8B2A026023474F8B00DAB7EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91367C286DC84F6AE75C98CD /* Pods-PurchaseAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PurchaseAppTests/Pods-PurchaseAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA81F55EDCADB1E57AEEB2E3 /* Pods-PurchaseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PurchaseApp.debug.xcconfig"; path = "Target Support Files/Pods-PurchaseApp/Pods-PurchaseApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +85,22 @@
 				3DE022F1A246700457F2C99A /* Pods_PurchaseAppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FAF44FF2349F7780046C1AF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3FAF45002349FB860046C1AF /* Home */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3FAF45002349FB860046C1AF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3FAF45012349FBAA0046C1AF /* HomeViewModelSpec.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		3FB334502348AD5900B72131 /* Models */ = {
@@ -192,8 +208,8 @@
 		8B2A025D23474F8B00DAB7EF /* PurchaseAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				3FAF44FF2349F7780046C1AF /* ViewModels */,
 				3FB334592348AF3100B72131 /* Models */,
-				8B2A025E23474F8B00DAB7EF /* PurchaseAppTests.swift */,
 				8B2A026023474F8B00DAB7EF /* Info.plist */,
 			);
 			path = PurchaseAppTests;
@@ -411,7 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FB3345B2348AF4F00B72131 /* PurchaseServiceMock.swift in Sources */,
-				8B2A025F23474F8B00DAB7EF /* PurchaseAppTests.swift in Sources */,
+				3FAF45022349FBAA0046C1AF /* HomeViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

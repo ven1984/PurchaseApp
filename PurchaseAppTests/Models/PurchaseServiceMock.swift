@@ -11,11 +11,32 @@ import Foundation
 @testable import PurchaseApp
 
 final class PurchaseServiceMock: PurchaseServicing {
+
+    let purchaseState: PurchaseState
+    let restoreState: PurchaseState
+
+    init(purchaseState: PurchaseState = .none, restoreState: PurchaseState = .none) {
+        self.purchaseState = purchaseState
+        self.restoreState = restoreState
+    }
+
     func purchase(fail: (PurchaseError) -> Void, complete: () -> Void) {
-        // TODO: Implement
+        switch purchaseState {
+        case .error(let error):
+            fail(error)
+        case .success:
+            complete()
+        default: break
+        }
     }
 
     func restorePurchase(fail: (PurchaseError) -> Void, complete: () -> Void) {
-        // TODO: Implement
+        switch restoreState {
+        case .error(let error):
+            fail(error)
+        case .success:
+            complete()
+        default: break
+        }
     }
 }
